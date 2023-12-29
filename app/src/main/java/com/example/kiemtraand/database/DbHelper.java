@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 public class DbHelper extends SQLiteOpenHelper {
 
     public DbHelper(@Nullable Context context) {
-        super(context, "QLSanPham", null, 1);
+        super(context, "QLSanPham", null, 2);
     }
 
     @Override
@@ -18,6 +18,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL(sql);
         String data = "INSERT INTO SanPham VALUES(1, 'Salad', '20000', 'https://www.tastefullyeclectic.com/wp-content/uploads/2017/06/Copycat-Berry-Almond-Salad.jpg')," +
                 "(2, 'Pasta', '30000', 'https://www.advrider.com/wp-content/uploads/2021/03/20210303_160517-1200x1137.jpg')," +
+                "(4, 'Pasta', '30000', 'https://www.advrider.com/wp-content/uploads/2021/03/20210303_160517-1200x1137.jpg')," +
                 "(3, 'Pizza Cheese', '60000', 'https://wallpaperaccess.com/full/2237015.jpg')";
         db.execSQL(data);
     }
