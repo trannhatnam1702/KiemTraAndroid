@@ -30,4 +30,11 @@ public class MainActivity extends AppCompatActivity {
         sanPhamAdapter = new SanPhamAdapter(this, listSanPham);
         recyclerView.setAdapter(sanPhamAdapter);
     }
+
+    public void refreshRecyclerView() {
+        SanPhamDAO sanPhamDAO = new SanPhamDAO(MainActivity.this);
+        ArrayList<SanPham> list = sanPhamDAO.getListSanPham();
+        SanPhamAdapter sanPhamAdapter = new SanPhamAdapter(MainActivity.this, list);
+        recyclerView.setAdapter(sanPhamAdapter);
+    }
 }

@@ -41,4 +41,10 @@ public class SanPhamDAO {
         }
         return list;
     }
+
+    public boolean deleteSP(int MaSP) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        int affectedRows = db.delete("SanPham", "MaSP=?", new String[]{String.valueOf(MaSP)});
+        return affectedRows > 0;
+    }
 }
